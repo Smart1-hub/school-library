@@ -1,16 +1,16 @@
 class Person
-  attr_accessor :name, age
+  attr_accessor :name, :age
   attr_writer :id
 
-  def initialize(name = 'unknown', age, parent_permission: true)
+  def initialize(age, name = 'unknown', parent_permission: true)
     super()
     @id = Random.rand(1..1000)
-    @name = name
     @age = age
+    @name = name
     @parent_permission = parent_permission
   end
 
-  def is_of_age
+  def of_age
     @age >= 18
   end
 
