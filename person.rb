@@ -1,10 +1,13 @@
 class Person
-  attr_accessor: name, age
-  attr_writer: id
+  attr_accessor :name, age
+  attr_writer :id
+
   def initialize(name = 'unknown', age, parent_permission: true)
+    super()
     @id = Random.rand(1..1000)
     @name = name
     @age = age
+    @parent_permission = parent_permission
   end
 
   def is_of_age
