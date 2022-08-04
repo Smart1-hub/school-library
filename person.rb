@@ -1,4 +1,3 @@
-# rubocop: disable Style/OptionalBooleanParameter
 require './nameable'
 
 class Person < Nameable
