@@ -23,7 +23,9 @@ class App
 
   def list_all_people
     puts 'No people to show yet! Please add a teacher or student' if @people.empty?
+
     @people.each { |person| puts "[#{person.class}] Name: #{person.name}, id: #{person.id}, Age: #{person.age}" }
+    puts
     puts
   end
 
@@ -39,6 +41,7 @@ class App
     else
       puts 'Enter a valid option'
     end
+  end
 
     def create_teacher
       puts 'Age: '
@@ -68,7 +71,6 @@ class App
       @people << student
       puts 'Student created successfully'
     end
-  end
 
   def create_a_book
     puts 'Title: '
@@ -108,5 +110,7 @@ class App
     @rentals.each do |rental|
       puts "Date: #{rental.date}, Book \"#{rental.book.title}\" by #{rental.book.author}" if rental.person.id == id
     end
+    puts
+    puts
   end
 end

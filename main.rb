@@ -1,3 +1,5 @@
+# rubocop:disable Metrics
+
 require './app'
 
 def run
@@ -49,3 +51,5 @@ def main
 end
 
 main
+
+# rubocop:enable Metrics
