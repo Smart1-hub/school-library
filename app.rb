@@ -18,6 +18,7 @@ class App
     puts 'You need to add a book! Please add...' if @books.empty?
     @books.each { |book| puts "Title: \"#{book.title}\", Author: #{book.author}" }
     puts
+    puts
   end
 
   def list_all_people
@@ -27,7 +28,7 @@ class App
   end
 
   def create_a_person
-    puts 'Do you want to create a teacher (1) or student (2)? [Input the number]: '  
+    print 'Do you want to create a teacher (1) or student (2)? [Input the number]: '
     option = gets.chomp
 
     case option
@@ -88,24 +89,24 @@ class App
     puts 'Select a person from the list (not id)'
     @people.each_with_index do |person, index|
       puts "#{index}) [#{person.class}] Name: #{person.name}, id: #{person.id}, Age: #{person.age}"
+    end
+    person_id = gets.chomp.to_i
+    puts 'Date: '
+    date = gets.chomp.to_s
+
+    rental = Rental.new(date, @people[person_id], @books[book_id])
+    @rental << rental
+
+    puts 'Created rental successfully'
   end
-   person_id = gets.chomp.to_i
-   puts 'Date: '
-   date = gets.chomp.to_s
 
-   rental = Rental.new(date, @people[person_id], @books[book_id])
-   @rental << rental
+  def list_rental_by_person_id
+    puts ' id of person: '
+    id = gets.chomp.to_i
 
-   puts 'Created rental successfully'
-end
-
-def list_rental_by_person_id
-  puts ' id of person: '
-  id = gets.chomp.to_i
-
-  puts 'Rentals: '
-  @rentals.each do |rental|
-    puts "Date: #{rental.date}, Book \"#{rental.book.title}\" by #{rental.book.author}" if rental.person.id == id
+    puts 'Rentals: '
+    @rentals.each do |rental|
+      puts "Date: #{rental.date}, Book \"#{rental.book.title}\" by #{rental.book.author}" if rental.person.id == id
+    end
   end
-end
 end
