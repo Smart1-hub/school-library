@@ -103,7 +103,7 @@ class App
     date = gets.chomp.to_s
 
     rental = Rental.new(date, @people[person_id], @books[book_id])
-    @rental << rental
+    @rentals << rental
 
     puts 'Created rental successfully'
     puts

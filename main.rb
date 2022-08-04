@@ -8,7 +8,7 @@ def run
   puts
 end
 
-def option_menu(app)
+def option_menu(myapp)
   puts 'Please choose an option by entering a number!'
   puts '1 - List all books'
   puts '2 - List all people'
@@ -22,23 +22,23 @@ def option_menu(app)
 
   case option
   when '1'
-    app.list_all_books
-    option_menu app
+    myapp.list_all_books
+    option_menu myapp
   when '2'
-    app.list_all_people
-    option_menu app
+    myapp.list_all_people
+    option_menu myapp
   when '3'
-    app.create_a_person
-    option_menu app
+    myapp.create_a_person
+    option_menu myapp
   when '4'
-    app.create_a_book
-    option_menu app
+    myapp.create_a_book
+    option_menu myapp
   when '5'
-    app.create_a_rental
-    option_menu app
+    myapp.create_a_rental
+    option_menu myapp
   when '6'
-    app.list_rental_by_person_id
-    option_menu app
+    myapp.list_rental_by_person_id
+    option_menu myapp
   when '7'
     puts 'Thanks for choosing the School Library App'
   else
