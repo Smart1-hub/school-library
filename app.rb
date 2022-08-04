@@ -5,7 +5,7 @@ require './student'
 require './rental'
 require './classroom'
 require './capitalize_decorator'
-require './trimmer_decorator'
+require './trimmer_decorate'
 
 class App
   def initialize
@@ -55,6 +55,8 @@ class App
     @people << teacher
 
     puts 'Teacher created successfully'
+    puts
+    puts
   end
 
   def create_student
@@ -70,6 +72,8 @@ class App
     student = Student.new(age, name, parent_permission)
     @people << student
     puts 'Student created successfully'
+    puts
+    puts
   end
 
   def create_a_book
@@ -80,6 +84,8 @@ class App
     @books << book
 
     puts 'Created book successfully'
+    puts
+    puts
   end
 
   def create_a_rental
@@ -100,6 +106,8 @@ class App
     @rental << rental
 
     puts 'Created rental successfully'
+    puts
+    puts
   end
 
   def list_rental_by_person_id
