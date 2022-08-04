@@ -43,34 +43,34 @@ class App
     end
   end
 
-    def create_teacher
-      puts 'Age: '
-      age = gets.chomp.to_i
-      puts 'Name: '
-      name = gets.chomp
-      puts 'Specialization: '
-      specializaation = gets.chomp
+  def create_teacher
+    puts 'Age: '
+    age = gets.chomp.to_i
+    puts 'Name: '
+    name = gets.chomp
+    puts 'Specialization: '
+    specializaation = gets.chomp
 
-      teacher = Teacher.new(age, name, specializaation)
-      @people << teacher
+    teacher = Teacher.new(age, name, specializaation)
+    @people << teacher
 
-      puts 'Teacher created successfully'
-    end
+    puts 'Teacher created successfully'
+  end
 
-    def create_student
-      puts 'Age: '
-      age = gets.chomp.to_i
-      puts 'Name: '
-      name = gets.chomp
-      puts 'Has parent permission? [Y/N]: '
-      permission = gets.chomp
+  def create_student
+    puts 'Age: '
+    age = gets.chomp.to_i
+    puts 'Name: '
+    name = gets.chomp
+    puts 'Has parent permission? [Y/N]: '
+    permission = gets.chomp
 
-      parent_permission = permission == 'Y'
+    parent_permission = permission == 'Y'
 
-      student = Student.new(age, name, parent_permission)
-      @people << student
-      puts 'Student created successfully'
-    end
+    student = Student.new(age, name, parent_permission)
+    @people << student
+    puts 'Student created successfully'
+  end
 
   def create_a_book
     puts 'Title: '
