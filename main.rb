@@ -4,6 +4,8 @@ require './app'
 
 def run
   puts 'Welcome to School Library App!'
+  puts
+  puts
 end
 
 def option_menu(app)

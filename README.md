@@ -1,11 +1,11 @@
 # School-Library-App
-This is a school library app project. In this initial step, classes are implemented to represent students and teachers.
+This is a school library app. In this project, a form of UI for the school library app is created . This way it can be invoked as an executable and not something used in IRB exclusively.
 
 ## Built With
 - Ruby
 
 ## Preview
-![screenshot](https://commons.wikimedia.org/wiki/File:International_Morse_Code.svg#/media/File:International_Morse_Code.svg)
+![screenshot](coming soon)
 
 ## Set-up Rubocop GitHub Action
 
