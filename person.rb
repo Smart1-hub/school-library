@@ -1,3 +1,4 @@
+# rubocop: disable Style/OptionalBooleanParameter
 require './nameable'
 
 class Person < Nameable
@@ -32,3 +33,5 @@ class Person < Nameable
       @parent_permission == true
   end
 end
+
+# rubocop: enable Style/OptionalBooleanParameter
