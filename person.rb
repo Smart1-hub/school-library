@@ -1,8 +1,11 @@
+# rubocop: disable Style/OptionalBooleanParameter
+require './nameable'
+
 class Person < Nameable
   attr_accessor :name, :age
   attr_reader :id, :rentals
 
-  def initialize(age, name = 'unknown', parent_permission: true)
+  def initialize(age, name = 'unknown', parent_permission = true)
     super()
     @id = Random.rand(1..1000)
     @age = age
@@ -12,7 +15,7 @@ class Person < Nameable
   end
 
   def of_age?
-    @age >= 18
+    @age < 18
   end
 
   private :of_age?
@@ -30,3 +33,5 @@ class Person < Nameable
       @parent_permission == true
   end
 end
+
+# rubocop: enable Style/OptionalBooleanParameter
