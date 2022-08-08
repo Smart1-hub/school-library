@@ -37,7 +37,7 @@ def option_menu(myapp)
     myapp.create_a_rental
     option_menu myapp
   when '6'
-    myapp.list_rental_by_person_id
+    myapp.list_rentals_by_person_id
     option_menu myapp
   when '7'
     puts 'Thanks for choosing the School Library App'

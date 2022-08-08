@@ -16,7 +16,7 @@ class App
 
   def list_all_books
     puts 'You need to add a book! Please add...' if @books.empty?
-    @books.each { |book| puts "Title: \"#{book.title}\", Author: #{book.author}" }
+    @books.each do { |book| puts "Title: \"#{book.title}\", Author: #{book.author}" }
     puts
     puts
   end
@@ -24,7 +24,7 @@ class App
   def list_all_people
     puts 'No people to show yet! Please add a teacher or student' if @people.empty?
 
-    @people.each { |person| puts "[#{person.class}] Name: #{person.name}, id: #{person.id}, Age: #{person.age}" }
+    @people.each do { |person| puts "[#{person.class}] Name: #{person.name}, id: #{person.id}, Age: #{person.age}" }
     puts
     puts
   end
@@ -44,11 +44,11 @@ class App
   end
 
   def create_teacher
-    puts 'Age: '
+    print 'Age: '
     age = gets.chomp.to_i
-    puts 'Name: '
+    print 'Name: '
     name = gets.chomp
-    puts 'Specialization: '
+    print 'Specialization: '
     specializaation = gets.chomp
 
     teacher = Teacher.new(age, name, specializaation)
@@ -60,11 +60,11 @@ class App
   end
 
   def create_student
-    puts 'Age: '
+    print 'Age: '
     age = gets.chomp.to_i
-    puts 'Name: '
+    print 'Name: '
     name = gets.chomp
-    puts 'Has parent permission? [Y/N]: '
+    print 'Has parent permission? [Y/N]: '
     permission = gets.chomp
 
     parent_permission = permission == 'Y'
@@ -77,8 +77,11 @@ class App
   end
 
   def create_a_book
-    puts 'Title: '
+    print 'Title: '
     title = gets.chomp
+
+    print 'Author: '
+    author = gets.chomp
 
     book = Book.new(title, author)
     @books << book
@@ -91,15 +94,16 @@ class App
   def create_a_rental
     puts 'Select a book from the list'
 
-    @books.each_with_index { |book, index| puts "#{index}) Title: \"#{book.title}\", Author: #{book.title}" }
+    @books.each_with_index { |book, index| puts "#{index}) Title: \"#{book.title}\", Author: #{book.author}" }
     book_id = gets.chomp.to_i
 
     puts 'Select a person from the list (not id)'
     @people.each_with_index do |person, index|
       puts "#{index}) [#{person.class}] Name: #{person.name}, id: #{person.id}, Age: #{person.age}"
     end
+
     person_id = gets.chomp.to_i
-    puts 'Date: '
+    print 'Date: '
     date = gets.chomp.to_s
 
     rental = Rental.new(date, @people[person_id], @books[book_id])
@@ -110,8 +114,8 @@ class App
     puts
   end
 
-  def list_rental_by_person_id
-    puts ' id of person: '
+  def list_rentals_by_person_id
+    print ' id of person: '
     id = gets.chomp.to_i
 
     puts 'Rentals: '
