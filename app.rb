@@ -16,7 +16,7 @@ class App
 
   def list_all_books
     puts 'You need to add a book! Please add...' if @books.empty?
-    @books.each do { |book| puts "Title: \"#{book.title}\", Author: #{book.author}" }
+    @books.each { |book| puts "Title: \"#{book.title}\", Author: #{book.author}" }
     puts
     puts
   end
@@ -24,7 +24,7 @@ class App
   def list_all_people
     puts 'No people to show yet! Please add a teacher or student' if @people.empty?
 
-    @people.each do { |person| puts "[#{person.class}] Name: #{person.name}, id: #{person.id}, Age: #{person.age}" }
+    @people.each { |person| puts "[#{person.class}] Name: #{person.name}, id: #{person.id}, Age: #{person.age}" }
     puts
     puts
   end
