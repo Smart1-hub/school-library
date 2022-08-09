@@ -4,25 +4,25 @@ require './app'
 
 def menu(option, myapp)
   case option
-  when '1'
+  when 1
     myapp.list_all_books
     option_menu myapp
-  when '2'
+  when 2
     myapp.list_all_people
     option_menu myapp
-  when '3'
+  when 3
     myapp.create_a_person
     option_menu myapp
-  when '4'
+  when 4
     myapp.create_a_book
     option_menu myapp
-  when '5'
+  when 5
     myapp.create_a_rental
     option_menu myapp
-  when '6'
+  when 6
     myapp.list_rentals_by_person_id
     option_menu myapp
-  when '7'
+  when 7
     puts 'Thanks for choosing the School Library App'
   else
     puts 'Please enter any number from 1 to 7'
