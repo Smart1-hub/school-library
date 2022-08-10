@@ -50,7 +50,7 @@ class App
     print 'Name: '
     name = gets.chomp
     print 'Specialization: '
-    specializaation = gets.chomp
+    specialization = gets.chomp
 
     teacher = Teacher.new(specialization, age, name)
     @people << teacher
