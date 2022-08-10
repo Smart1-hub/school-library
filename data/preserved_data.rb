@@ -1,3 +1,5 @@
+# rubocop: disable Style/GuardClause
+
 require 'json'
 require './person'
 require './teacher'
@@ -167,3 +169,5 @@ def save_rental(date, person_id, book_id)
     the_file.close
   end
 end
+
+# rubocop: enable Style/GuardClause
