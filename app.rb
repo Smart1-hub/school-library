@@ -6,6 +6,7 @@ require './rental'
 require './classroom'
 require './capitalize_decorator'
 require './trimmer_decorate'
+require './data/preserved_data'
 
 class App
   def initialize
@@ -34,9 +35,9 @@ class App
     option = gets.chomp
 
     case option
-    when '1'
+    when 1
       create_teacher
-    when '2'
+    when 2
       create_student
     else
       puts 'Enter a valid option'
@@ -49,10 +50,12 @@ class App
     print 'Name: '
     name = gets.chomp
     print 'Specialization: '
-    specializaation = gets.chomp
+    specialization = gets.chomp
 
-    teacher = Teacher.new(age, name, specializaation)
+    teacher = Teacher.new(specialization, age, name)
     @people << teacher
+
+    save_teacher(specialization, age, name)
 
     puts 'Teacher created successfully'
     puts
@@ -71,6 +74,9 @@ class App
 
     student = Student.new(age, name, parent_permission)
     @people << student
+
+    save_student(classroom, age, name, parent_permission)
+
     puts 'Student created successfully'
     puts
     puts
@@ -85,6 +91,8 @@ class App
 
     book = Book.new(title, author)
     @books << book
+
+    save_book(title, author)
 
     puts 'Created book successfully'
     puts
@@ -109,6 +117,8 @@ class App
     rental = Rental.new(date, @people[person_id], @books[book_id])
     @rentals << rental
 
+    save_rental(date, person_id, book_id)
+
     puts 'Created rental successfully'
     puts
     puts
@@ -125,4 +135,16 @@ class App
     puts
     puts
   end
+
+  def load_preserved_data
+    load_people @people
+    load_books @books
+    load_rentals @rentals
+  end
+
+  # def show_data
+  # p @people
+  # p @books
+  # p @rentals
+  # end
 end
