@@ -78,7 +78,7 @@ def save_student(classroom, age, name, parent_permission)
     parent_permission: parent_permission
   }
 
-  unless File.exist?('./data/people.json')
+  if File.exist?('./data/people.json')
     file = File.open('./data/people.json')
 
     if file.size.zero?
@@ -104,7 +104,7 @@ def save_teacher(specializaation, age, name)
     parent_permission: true
   }
 
-  unless File.exist?('.data/people.json')
+  if File.exist?('.data/people.json')
     file = File.open('./data/people.json')
 
     if file.size.zero?
@@ -127,7 +127,7 @@ def save_book(title, author)
     author: author
   }
 
-  unless File.exist?('./data/books.json')
+  if File.exist?('./data/books.json')
     file = File.open('./data/books.json')
 
     if file.size.zero?
@@ -151,7 +151,7 @@ def save_rental(date, person_id, book_id)
     book: book_id
   }
 
-  unless File.exist?('./data/rentals.json')
+  if File.exist?('./data/rentals.json')
     file = File.open('./data/rentals.json')
 
     if file.size.zero?
