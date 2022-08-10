@@ -52,10 +52,10 @@ class App
     print 'Specialization: '
     specializaation = gets.chomp
 
-    teacher = Teacher.new(age, name, specializaation)
+    teacher = Teacher.new(specialization, age, name)
     @people << teacher
 
-    save_teacher(specializaation, age, name)
+    save_teacher(specialization, age, name)
 
     puts 'Teacher created successfully'
     puts
