@@ -1,4 +1,4 @@
-require './trimmer_decorator'
+require './trimmer_decorate'
 require './capitalize_decorator'
 require './person'
 
