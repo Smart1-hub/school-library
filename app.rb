@@ -71,8 +71,9 @@ class App
     permission = gets.chomp
 
     parent_permission = permission == 'Y'
+    classroom = 'Grade 12'
 
-    student = Student.new(age, name, parent_permission)
+    student = Student.new(classroom, age, name, parent_permission)
     @people << student
 
     save_student(classroom, age, name, parent_permission)

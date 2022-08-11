@@ -51,6 +51,8 @@ end
 
 def main
   app = App.new
+  app.load_preserved_data
+  # app.show_data
   run
   option_menu app
 end
