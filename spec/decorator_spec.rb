@@ -14,11 +14,11 @@ describe Decorator do
   end
 
   it 'should CAPS person name' do
-    expect(@capitalize.correct_name).to eq 'ANTETOKOUNMPO'
+    expect(@capitalize.correct_name).to eq 'Antetokounmpo'
   end
 
   it 'should slice if string is more than 10 char' do
-    expect(@trimmer_decorator.correct_name).to eq 'ANTETOKOUN'
+    expect(@trimmer_decorator.correct_name).to eq 'Antetokoun'
     expect(@trimmer_decorator.correct_name.length).to be <= 10
   end
 end

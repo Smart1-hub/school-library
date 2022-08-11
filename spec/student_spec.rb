@@ -22,8 +22,8 @@ describe Student do
     expect(@student.classroom).to eq 'Grade 12'
   end
 
-  it 'should show the student name as Unknown' do
-    expect(@student_unknown.name).to eq 'Unknown'
+  it 'should show the student name as unknown' do
+    expect(@student_unknown.name).to eq 'unknown'
   end
 
   it 'should return the student name' do

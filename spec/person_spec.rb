@@ -27,8 +27,8 @@ describe Person do
     expect(@person.name).to eq 'Roland'
   end
 
-  it 'should show the person name as Unknown' do
-    expect(@person_unknown.name).to eq 'Unknown'
+  it 'should show the person name as unknown' do
+    expect(@person_unknown.name).to eq 'unknown'
   end
 
   it 'The correct_name method corrects the name' do
